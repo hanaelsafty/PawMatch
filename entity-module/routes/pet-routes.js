@@ -1,5 +1,5 @@
 const express = require("express");
-const petController = require("../controllers/pet-controllers");
+const petControllers = require("../controllers/pet-controllers");
 const upload = require("../middlewares/multer-middleware");
 
 const router = express.Router();
@@ -7,7 +7,7 @@ const router = express.Router();
 router
 .route("/")
 .get (petControllers.getAllPets)
-.post (upload. single("image"), petControllers.createPet)
+.post (upload.single("image"), petControllers.createPet)
 router
 .route("/:id")
 .get(petControllers.getPetById)

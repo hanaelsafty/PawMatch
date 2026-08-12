@@ -30,10 +30,10 @@ const petSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    
-    image: {
-    type: String
-}
+
+    imageUrl: {
+        type: String
+    }
 });
 
 const Pet = mongoose.model("Pet", petSchema);
