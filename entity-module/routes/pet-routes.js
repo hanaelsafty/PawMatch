@@ -1,24 +1,17 @@
 const express = require("express");
+const petController = require("../controllers/pet-controllers");
 const upload = require("../middlewares/multer-middleware");
-
-const {
-    getAllPets,
-    createPet,
-    getPetById,
-    updatePet,
-    deletePet
-} = require("../controllers/pet-controllers");
 
 const router = express.Router();
 
-router.post("/", upload.single("image"), createPet);
-
-router.get("/", getAllPets);
-
-router.get("/:id", getPetById);
-
-router.patch("/:id", upload.single("image"), updatePet);
-
-router.delete("/:id", deletePet);
+router
+.route("/")
+.get (petControllers.getAllPets)
+.post (upload. single("image"), petControllers.createPet)
+router
+.route("/:id")
+.get(petControllers.getPetById)
+.patch(upload. single("image"), petControllers.updatePet)
+.delete(petControllers.deletePet);
 
 module.exports = router;

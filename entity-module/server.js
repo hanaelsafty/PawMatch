@@ -15,7 +15,9 @@ app.use(express.json());
 
 app.use("/pet", petRouter);
 
-const PORT = process.env.PORT || 5000;
+app.use("/api/v1/uploads", express.static("uploads"));
+
+const PORT = process.env.PORT ;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
