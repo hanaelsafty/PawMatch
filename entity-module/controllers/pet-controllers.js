@@ -1,5 +1,5 @@
 const Pet = require("../models/pet-model");
-const deleteUploadedFiles = require("../utils/delete-uploaded-files");
+const deleteUploadedFiles = require("../utils/delete-uploaded-file");
 
 
 // GET ALL PETS
